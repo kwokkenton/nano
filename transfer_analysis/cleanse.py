@@ -182,7 +182,7 @@ class cleanse:
     
     ### iteration suite
     def iterDevs(self, direc): 
-        ''' 
+        ''' iterates over all devices/trials in each directory
         '''
         filepaths = sorted(glob.glob(direc + '/*.csv'))
         
@@ -193,7 +193,7 @@ class cleanse:
     
     
     def iterTemps(self):
-        '''
+        ''' iterates over all directories e.g. the temperature folders
         '''
         result = []
         for direc in self.dirs:
@@ -202,6 +202,8 @@ class cleanse:
     
     
     def getdf(self):
+        ''' obtains the Pandas DataFrame
+        '''
         array = sp.array(self.iterTemps()).T
         cols = self.extractcols() #todo: move to __init__
         

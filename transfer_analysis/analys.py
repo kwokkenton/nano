@@ -191,7 +191,7 @@ class analys:
             
         plt.plot(x, fit)
         plt.ylim(y.min().min(), y.max().max())
-    #    plt.legend(c.curvenames)
+
         plt.legend()
         plt.xlabel('$V_{gs}$  (V)')
         plt.ylabel('Transconductance ($S$)')
@@ -208,7 +208,6 @@ class analys:
         
         pass
     
-
     ### main suite || test cases ######################
     
     def main1(self):
@@ -247,23 +246,6 @@ class analys:
 
         pass
 
-
-#    def main3(self):
-#        temperatures = ['all']
-#        devices = ['all']
-#        trials = ['all']
-#        experiments = ['10mV-off']
-#        filters = [temperatures, devices, trials, experiments]
-#        
-#        order = ['temperatures', 'devices', 'trials', 'experiments']
-#        split = 'devices'  
-#        
-#        filtered = self.filterdf(self.pardf, filters)
-#        self.genloop(order, split, filtered, "self.plotPars(df, title)")
-#        
-#        # TODO work on plotting params plots
-#        
-#        pass
 
 #a = analys()
 #a.main3()
