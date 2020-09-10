@@ -16,11 +16,15 @@ sns.set_style("darkgrid")
 sns.set_context("talk") 
 
 class analys: 
-    def __init__(self):
+    def __init__(self, degree = 9):
         self.c = cleanse()
         self.df = self.c.getdf()
-        self.augdf = self.augmentTrans(self.df, 9)
+        self.augdf = self.augmentTrans(self.df, degree)
         self.pardf = self.genParams(self.augdf)
+        
+        # save to csv
+        self.augdf.to_csv('./output/full.csv')
+        self.pardf.to_csv('./output/param.csv')
         pass
     
     ### preprocessing suite ######################
@@ -172,12 +176,13 @@ class analys:
         plt.ylabel('$I_{ds}$  (A)')
         plt.ticklabel_format(axis='y', style='sci', scilimits=(0,0))
         plt.title(title)
-        plt.show()      
+        plt.savefig("./figures/%s.png" %title) 
         pass
 
 
     def plotTC(self, dataframe, title=None):
-        
+        '''
+        '''
         x = dataframe.filter(like = 'Vgs')
         y = dataframe.filter(like = 'tcd')
         

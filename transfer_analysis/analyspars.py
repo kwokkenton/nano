@@ -40,11 +40,11 @@ class analyspars:
     def avgQuants(self, filtered): 
         ''' gives a set of average quantity plots
         '''
+        
         avged = filtered.groupby(['temperature']).mean()
         stds = filtered.groupby(['temperature']).std()
         
         f, axes = plt.subplots(2, 2, figsize=(10, 4), sharex=True)
-        #plt.title('hi')
         cols = avged.columns
         f.suptitle('Averaged quantities')
         
@@ -62,20 +62,17 @@ class analyspars:
         
     def cat(self, df, yname):
         y = df[yname]
-        
         sns.catplot(x="temperature", y= yname, hue="device", kind="swarm", data=df)
         plt.ylim(y.min(), y.max()* 1.1)
+        plt.savefig('./figures/' + yname + 'swarm.png')    
 
+    def iohist(self, catdf):
+        catdf['iocat'] = pd.cut(catdf['onoff'], 
+            bins = [100, 1000, 10_000, 100_000], 
+            labels=['10^2', '10^3','10^4'])
+
+        plt.figure(figsize=(7,6))
+        sns.countplot(x = 'iocat' , hue = 'temperature', data=catdf)
+        plt.savefig('./figures/iohist.png')
 
 ap = analyspars()
-#%%
-#ap.layers
- 
-#temperatures = ['all']
-#devices = ['all']
-#trials = ['all']
-#experiments = ['10mV-off']
-#filters = [temperatures, devices, trials, experiments]
-#
-#filtered =  ap.getFiltered(filters)
-#ap.cat(filtered, 'maxtc')

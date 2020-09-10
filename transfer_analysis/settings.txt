@@ -1,0 +1,37 @@
+### Customisation for transfer curve plotting
+#
+# FILTERS
+# temperatures: experiment temperature given when naming files
+# devices: choice of which device (NW) to consider
+# trials: choice of which repeated device trial to consider ['(1)', '(2)']
+# experiments: refers to the four transfer curves ['10mV-on', '10mV-off', '10-mV-on', '30-mV off'] etc. 
+#
+# PLOT GROUPINGS
+# order: the logical order of what variable to group the plots by
+# split: the variable to separate each of the batch plots by
+#
+#==============================================================================
+### FILTERS 
+temperatures = ['all']
+devices = ['all']
+trials = ['(1)'] 
+experiments = ['10mV-off']
+filters = [temperatures, devices, trials, experiments]
+#
+#
+### GROUPINGS
+order = ['temperatures', 'devices', 'trials', 'experiments']
+split = 'devices'
+#
+#
+### WHAT TO PLOT
+#
+plotTransferCurves = True
+plotAnalysedParams = True
+#
+### OTHER SETTINGS
+#
+degree = 9
+#
+#==============================================================================
+
