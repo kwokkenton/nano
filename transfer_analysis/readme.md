@@ -102,10 +102,33 @@ Settings file:
 Output:
   ![](./imgs/3_1.png)
 
-### 4. Interpreting histograms and the swarm plot
-
+### 4. Comparing transconductances and their fits
+The transconductances were obtained by taking the first order derivative of each transfer curve. As the scatter is large, a 9th order polynomial fit was applied to allow better visualisation of the trend. The degree of the polynomial can be changed by modifying `degree` inside the settings file.
 
 Settings file:
+
+    temperatures = ['all']
+    devices = ['all']
+    trials = ['(1)']
+    experiments = ['10mV-off']
+
+    filters = [temperatures, devices, trials, experiments]
+
+    order = ['temperatures', 'devices', 'trials', 'experiments']
+    split = 'devices'
+
+Output:
+  ![](./imgs/4_1.png)
+  ![](./imgs/4_2.png)
+  ![](./imgs/4_3.png)
+  ![](./imgs/4_4.png)
+  ![](./imgs/4_5.png)
+  ![](./imgs/4_6.png)
+
+### 5. Interpreting histograms and the swarm plot
+
+
+Settings file (Same as 4):
 
     temperatures = ['all']
     devices = ['all']
@@ -120,8 +143,8 @@ Settings file:
 Outputs:
 
 This is a histogram of the distribution of on-off ratios at particular temperatures. The graph takes into account of the same data that was filtered in a particular settings file.
-  ![](./imgs/4_1.png)
+  ![](./imgs/5_1.png)
 
 The two following figures are swarm plots of the on off ratios and maximum transconductances of each device.   
-  ![](./imgs/4_2.png)
-  ![](./imgs/4_3.png)
+  ![](./imgs/5_2.png)
+  ![](./imgs/5_3.png)

@@ -29,7 +29,10 @@ if plotTransferCurves:
     plt.figure(figsize=(12,6))
     a.genloop(order, split, filtered, 'plt.figure(figsize=(12,6)); self.plotTransfer(df, title);')
     
-#%%
+if plotTransconductances:
+    plt.figure(figsize=(12,6))
+    a.genloop(order, split, a.filterdf(a.augdf, filters), 'plt.figure(figsize=(12,6)); self.plotTC(df, title)')   
+
 ### analysis of parameters
 if plotAnalysedParams: 
     catdf = ap.categorisedf(a.genParams(a.filterdf(a.augdf, filters)))

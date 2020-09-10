@@ -27,6 +27,7 @@ split = 'devices'
 ### WHAT TO PLOT
 #
 plotTransferCurves = True
+plotTransconductances = True
 plotAnalysedParams = True
 #
 ### OTHER SETTINGS
@@ -34,4 +35,3 @@ plotAnalysedParams = True
 degree = 9
 #
 #==============================================================================
-
