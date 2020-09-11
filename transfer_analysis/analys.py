@@ -176,7 +176,7 @@ class analys:
         plt.ylabel('$I_{ds}$  (A)')
         plt.ticklabel_format(axis='y', style='sci', scilimits=(0,0))
         plt.title(title)
-        plt.savefig("./figures/%s.png" %title) 
+        plt.savefig("./figures/%s_trans.png" %title) 
         pass
 
 
@@ -202,7 +202,7 @@ class analys:
         plt.ylabel('Transconductance ($S$)')
         plt.ticklabel_format(axis='y', style='sci', scilimits=(0,0))
         plt.title(title)
-        plt.show()
+        plt.savefig("./figures/%s_TC.png" %title) 
         
         pass
     
